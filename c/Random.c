@@ -11,7 +11,7 @@ unsigned char GetCRandom(){//get c random character
 
 unsigned char GetFileRandom(){//get file random character
 	unsigned char memory;
-	fread(&memory, 1, 1, random);
+	memory = fgetc(random);
 	return memory;
 }
 
@@ -35,7 +35,11 @@ void File(const unsigned long int size){//run test for file. Takes in size in ki
 			}
 		}
 	}
-	printf("\nResult:\n%u zeros and %u ones", zeros, ones);
+	printf("\n\nChecked %uKB ", size);//size of file
+	printf("(%u Bits)\n", (ones + zeros));//size in bits
+	printf("\nResult:\n\nnumber of bits:\n%u zeros\n", zeros);//display result. number of zeros
+	printf("%u ones\n", ones);//number of ones
+	printf("%.5f%% binary difference\n", (float)abs(ones - zeros) * 100 / (ones + zeros));//zero and one diference
 }
 
 void CRand(const unsigned long int size){//run test for c random function. takes in size in kilobytes.
@@ -58,7 +62,10 @@ void CRand(const unsigned long int size){//run test for c random function. takes
 			}
 		}
 	}
-	printf("\nResult:\n\nnumber of bits:\n%u zeros\n", zeros);
-	printf("%u ones", ones);
+	printf("\n\nChecked %uKB ", size);//size of file
+	printf("(%u Bits)\n", (ones + zeros));//size in bits
+	printf("\nResult:\n\nnumber of bits:\n%u zeros\n", zeros);//display result. number of zeros
+	printf("%u ones\n", ones);//number of ones
+	printf("%.5f%% binary difference\n", (float)abs(ones - zeros) * 100 / (ones + zeros));//zero and one diference
 }
 

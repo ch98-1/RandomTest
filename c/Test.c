@@ -20,7 +20,8 @@ int main(int argc, char *argv[]){
 					size++;
 				}//get size of file
 				void rewind(random);//set it to start
-				File(size);//run the test
+				fseek(random, 0, SEEK_SET);
+				File(size);
 				return 0;//no error
 			}
 			else if (strcmp(argv[1], "-c") == 0){//if it is rand() mode
