@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 /*One function to get structure of random 4096 byte string and structure for that data.*/
 
 FILE* random;//random file pointer

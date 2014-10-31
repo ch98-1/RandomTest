@@ -43,7 +43,7 @@ void File(const unsigned long int size){//run test for file. Takes in size in ki
 }
 
 void CRand(const unsigned long int size){//run test for c random function. takes in size in kilobytes.
-	srand((int)time() + (int)clock());
+	srand((int)time(NULL) + (int)clock());
 	unsigned long int i, j, k;//counters i, j and k
 	unsigned long long int zeros = 0;
 	unsigned long long int ones = 0;//number of zeros and ones
