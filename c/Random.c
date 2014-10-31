@@ -42,7 +42,7 @@ void File(const unsigned long int size){//run test for file. Takes in size in ki
 	printf("(%u Bits)\n", total);//size in bits
 	printf("\nResult:\n\nnumber of bits:\n%u zeros\n", zeros);//display result. number of zeros
 	printf("%u ones\n", ones);//number of ones
-	printf("%.5f%% binary difference\n\n", (long double)abs(ones - zeros) * 100 / (total));//zero and one diference
+	printf("%.5f%% binary difference\n\n", (float)abs(ones - zeros) * 100 / (total));//zero and one diference
 	printf("%.1f seconds\n", difftime(time(NULL), start));//display time taken at end
 }
 
@@ -72,7 +72,7 @@ void CRand(const unsigned long int size){//run test for c random function. takes
 	printf("(%u Bits)\n", total);//size in bits
 	printf("\nResult:\n\nnumber of bits:\n%u zeros\n", zeros);//display result. number of zeros
 	printf("%u ones\n", ones);//number of ones
-	printf("%.5f%% binary difference\n\n", (long double)abs(ones - zeros) * 100 / (total));//zero and one diference
+	printf("%.5f%% binary difference\n\n", (float)abs(ones - zeros) * 100 / (total));//zero and one diference
 	printf("%.1f seconds\n", difftime(time(NULL), start));//display time taken at end
 }
 
