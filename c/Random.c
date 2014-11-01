@@ -5,7 +5,7 @@ unsigned char GetCRandom(){//get c random character
 	unsigned int r = rand();//random character
 		do{//draw random number until it is in correct range
 			r = rand();//get next random number
-		} while (r > 256);//range is 0<=r<=256
+		} while (r>=(RAND_MAX / 256) * 256);//range is 0<=r<=256
 		return (unsigned char)r;//return the random character
 }
 
