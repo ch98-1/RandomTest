@@ -2,7 +2,7 @@
 /*Generate random number*/
 
 unsigned char GetCRandom(){//get c random character
-		unsigned int r = 0;//random character
+	unsigned int r = rand();//random character
 		do{//draw random number until it is in correct range
 			r = rand();//get next random number
 		} while (r > 256);//range is 0<=r<=256
@@ -22,12 +22,16 @@ void File(const unsigned long int size){//run test for file. Takes in size in ki
 	unsigned long long int ones = 0;//number of zeros and ones
 	unsigned long long int total = 0;//total bits
 	unsigned long long int byte[256];//number of each byte
+	for (i = 0; i < 256; i++){//for each thing in memory
+		byte[i] = 0;//initialise all elements
+	}
 	time_t start = time(NULL);
 	for (i = 0; i < 1024; i++){//1 kb
 		printf("\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b");//clear
 		printf("%.1f%% finished", (float)(100 * i) / 1024);//display percentage finished
 		for (j = 0; j < size; j++){//number of kilobyte
 			unsigned char rand = GetFileRandom();//get random char
+			byte[rand]++;//increment correct byte
 			for (k = 0; k < 8; k++){//for each bit in char
 				if ((rand >> k) & 1){//if it was one
 					ones++;//add one to ones
@@ -37,7 +41,6 @@ void File(const unsigned long int size){//run test for file. Takes in size in ki
 				}
 				total++;//increment total
 			}
-			byte[rand]++;//increment correct byte
 		}
 	}
 	printf("\n\nChecked %uKB ", size);//size of file
@@ -80,12 +83,16 @@ void CRand(const unsigned long int size){//run test for c random function. takes
 	unsigned long long int ones = 0;//number of zeros and ones
 	unsigned long long int total = 0;//total bits
 	unsigned long long int byte[256];//number of each byte
+	for (i = 0; i < 256; i++){//for each thing in memory
+		byte[i] = 0;//initialise all elements
+	}
 	time_t start = time(NULL);
 	for (i = 0; i < 1024; i++){//1 kb
 		printf("\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b");//clear
 		printf("%.1f%% finished", (float)(100 * i) / 1024);//display percentage finished
 		for (j = 0; j < size; j++){//number of kilobyte
 			unsigned char rand = GetCRandom();//get random char
+			byte[rand]++;//increment correct byte
 			for (k = 0; k < 8; k++){//for each bit in char
 				if ((rand >> k) & 1){//if it was one
 					ones++;//add one to ones
@@ -95,7 +102,6 @@ void CRand(const unsigned long int size){//run test for c random function. takes
 				}
 				total++;//increment total
 			}
-			byte[rand]++;//increment correct byte
 		}
 	}
 	printf("\n\nChecked %uKB ", size);//size of file
