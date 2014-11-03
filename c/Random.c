@@ -11,7 +11,7 @@ unsigned char GetCRandom(){//get c random character
 
 unsigned char GetFileRandom(){//get file random character
 	unsigned char memory;
-	memory = fgetc(random);
+	memory = fgetc(randomf);
 	return memory;
 }
 

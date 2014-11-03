@@ -12,18 +12,18 @@ int main(int argc, char *argv[]){
 		}
 		if (argc == 3){
 			if (strcmp(argv[1], "-f") == 0){//if it is file mode
-				random = fopen(argv[2], "rb");//open file
+				randomf = fopen(argv[2], "rb");//open file
 				unsigned long int size = 0;
 				printf("\nGetting File Size...");//display message saying getting file size
-				while (size < 16777216 && !feof(random)){//16GB max
+				while (size < 16777216 && !feof(randomf)){//16GB max
 					char mem[1024];
-					fread(mem, 1, 1024, random);
+					fread(mem, 1, 1024, randomf);
+					memcpy(mem, 1024, NULL);//clear memory just in case
 					size++;
 				}//get size of file
 				printf("\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b");//delete message
 				printf("                    \b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b");//delete message
-				void rewind(random);//set it to start
-				fseek(random, 0, SEEK_SET);
+				fseek(randomf, 0, SEEK_SET);//set it to start
 				File(size);
 				return 0;//no error
 			}

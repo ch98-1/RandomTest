@@ -7,7 +7,7 @@
 #include <time.h>
 /*One function to get structure of random 4096 byte string and structure for that data.*/
 
-FILE* random;//random file pointer
+FILE* randomf;//random file pointer
 
 
 unsigned char GetCRandom();//get c random character
