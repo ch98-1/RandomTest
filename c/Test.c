@@ -63,5 +63,5 @@ number of Kilobytes to process or filename of file to read (up to 2^32)*/
 void PrintHelp(){
 	printf("Usage:\nCommand <option> <filename/number>\n\n");
 	printf("options:\n-f read from file\n-c read from c rand() function\n\n");
-	printf("filename/number:\nnumber of Kilobytes to process or filename of file to read (up to 2^32)");
+	printf("filename/number:\nnumber of Kilobytes to process or filename of file to read (up to 2^32)\n");
 }
